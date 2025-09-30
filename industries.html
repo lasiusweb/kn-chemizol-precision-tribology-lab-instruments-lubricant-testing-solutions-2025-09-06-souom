@@ -1,37 +1,363 @@
-<!-- Header/Footer same -->
-<!-- Main section: -->
-<h2 class="section-title">Industries We Serve</h2>
-<p>Partnering with OEMs, blenders, and distributors across global markets.</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Chemizol serves automotive OEMs, lubricant blenders, and industrial sectors across India, Asia-Pacific, Russia, Middle East, and Africa with high-performance additive solutions.">
+  <title>Industries We Serve — Chemizol Additives</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Poppins', sans-serif; color: #333; line-height: 1.6; background: #fff; }
+    h1, h2, h3, h4, h5 { font-family: 'Montserrat', sans-serif; font-weight: 700; }
+    .container { width: 90%; max-width: 1200px; margin: 0 auto; padding: 0 15px; }
+    .btn {
+      display: inline-block;
+      padding: 12px 30px;
+      background: #004d99;
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    .btn:hover { background: #003a75; transform: translateY(-2px); }
+    section { padding: 80px 0; }
+    .text-center { text-align: center; }
 
-<div class="industries-grid">
-  <div class="industry-card">
-    <i class="fas fa-car"></i>
-    <h3>Automotive OEMs</h3>
-    <p>Additive packages for engine, transmission, and gear oils meeting OEM specs.</p>
-  </div>
-  <div class="industry-card">
-    <i class="fas fa-industry"></i>
-    <h3>Lubricant Blenders</h3>
-    <p>Custom additive components and private-label formulations for bulk blending.</p>
-  </div>
-  <div class="industry-card">
-    <i class="fas fa-globe-asia"></i>
-    <h3>Asia-Pacific</h3>
-    <p>Cost-competitive, high-quality solutions for emerging markets.</p>
-  </div>
-  <div class="industry-card">
-    <i class="fas fa-gas-pump"></i>
-    <h3>Industrial Lubrication</h3>
-    <p>Turbine, hydraulic, and circulating oil additives for heavy industry.</p>
-  </div>
-  <div class="industry-card">
-    <i class="fas fa-charging-station"></i>
-    <h3>EV & Future Mobility</h3>
-    <p>Developing e-axle fluids and thermal management solutions for electric vehicles.</p>
-  </div>
-  <div class="industry-card">
-    <i class="fas fa-ship"></i>
-    <h3>Marine & Aviation</h3>
-    <p>Specialty formulations for extreme-condition lubrication (in development).</p>
-  </div>
-</div>
+    header {
+      background: #fff;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+    }
+    .logo {
+      font-size: 24px;
+      font-weight: 800;
+      color: #004d99;
+      text-decoration: none;
+    }
+    .nav-links {
+      display: flex;
+      list-style: none;
+    }
+    .nav-links li { margin-left: 30px; }
+    .nav-links a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    .nav-links a:hover { color: #004d99; }
+    .hamburger { display: none; cursor: pointer; font-size: 24px; }
+
+    .section-title {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      position: relative;
+      padding-bottom: 15px;
+      text-align: center;
+    }
+    .section-title:after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 0;
+      width: 70px;
+      height: 4px;
+      background: #004d99;
+    }
+
+    .industries-intro {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 60px;
+      font-size: 1.1rem;
+      color: #555;
+    }
+
+    .industries-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .industry-card {
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+      transition: all 0.4s ease;
+      background: white;
+    }
+    .industry-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 30px rgba(0,77,153,0.2);
+    }
+
+    .card-image {
+      height: 180px;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .card-content {
+      padding: 25px;
+    }
+    .card-content h3 {
+      color: #004d99;
+      margin-bottom: 12px;
+      font-size: 1.4rem;
+    }
+    .card-content p {
+      color: #666;
+      font-size: 0.95rem;
+    }
+
+    .regions-section {
+      background: #f8f9fa;
+      margin-top: 70px;
+      padding: 70px 0;
+    }
+    .regions-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 25px;
+      margin-top: 40px;
+    }
+    .region-item {
+      text-align: center;
+      padding: 20px 10px;
+    }
+    .region-item i {
+      font-size: 2.2rem;
+      color: #004d99;
+      margin-bottom: 15px;
+    }
+    .region-item h4 {
+      color: #004d99;
+    }
+
+    footer {
+      background: #222;
+      color: #fff;
+      padding: 60px 0 20px;
+    }
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-bottom: 40px;
+    }
+    .footer-column h3 { font-size: 1.3rem; margin-bottom: 20px; color: #4fc3f7; }
+    .footer-column ul { list-style: none; }
+    .footer-column ul li { margin-bottom: 10px; }
+    .footer-column ul li a { color: #ccc; text-decoration: none; transition: color 0.3s; }
+    .footer-column ul li a:hover { color: #fff; }
+    .footer-bottom { text-align: center; padding-top: 20px; border-top: 1px solid #444; color: #aaa; font-size: 0.9rem; }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 80px);
+        background: #fff;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 40px;
+        transition: 0.3s;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+      }
+      .nav-links.active { left: 0; }
+      .nav-links li { margin: 15px 0; }
+      .hamburger { display: block; }
+      .section-title { font-size: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container">
+      <nav class="navbar">
+        <a href="index.html" class="logo">Chemizol</a>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="industries.html">Industries</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger">
+          <i class="fas fa-bars"></i>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- INDUSTRIES SECTION -->
+  <section>
+    <div class="container">
+      <h2 class="section-title">Industries We Serve</h2>
+      <p class="industries-intro">
+        Chemizol partners with OEMs, lubricant blenders, and distributors across key sectors — delivering high-performance additive solutions that meet global standards and local needs.
+      </p>
+
+      <div class="industries-grid">
+        <!-- Automotive OEMs -->
+        <div class="industry-card">
+          <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80');"></div>
+          <div class="card-content">
+            <h3>Automotive OEMs</h3>
+            <p>Additive packages for engine, transmission, and gear oils meeting OEM specifications (API, JASO, ACEA).</p>
+          </div>
+        </div>
+
+        <!-- Lubricant Blenders -->
+        <div class="industry-card">
+          <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1605733513597-4a65c4a9d3a3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80');"></div>
+          <div class="card-content">
+            <h3>Lubricant Blenders</h3>
+            <p>Custom additive components and private-label formulations for bulk blending operations across emerging markets.</p>
+          </div>
+        </div>
+
+        <!-- Industrial Machinery -->
+        <div class="industry-card">
+          <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80');"></div>
+          <div class="card-content">
+            <h3>Industrial Lubrication</h3>
+            <p>Turbine, hydraulic, and circulating oil additives for heavy machinery, power plants, and manufacturing.</p>
+          </div>
+        </div>
+
+        <!-- EV & Future Mobility -->
+        <div class="industry-card">
+          <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1605733513597-4a65c4a9d3a3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80');"></div>
+          <div class="card-content">
+            <h3>EV & Future Mobility</h3>
+            <p>Developing e-axle fluids, thermal management fluids, and eco-friendly dispersants for electric vehicles.</p>
+          </div>
+        </div>
+
+        <!-- Marine & Aviation (Emerging) -->
+        <div class="industry-card">
+          <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1595050205981-2a5f0c8a5b8d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80');"></div>
+          <div class="card-content">
+            <h3>Marine & Aviation</h3>
+            <p>Specialty formulations for extreme-condition lubrication — under development for global certification.</p>
+          </div>
+        </div>
+
+        <!-- Two-Wheeler Segment -->
+        <div class="industry-card">
+          <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1542362567-b07e54358753?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80');"></div>
+          <div class="card-content">
+            <h3>Two-Wheeler Segment</h3>
+            <p>2T & 4T engine oil additives tailored for high-temperature, stop-start conditions in Asian markets.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GLOBAL PRESENCE -->
+  <section class="regions-section">
+    <div class="container">
+      <h2 class="section-title">Global Markets</h2>
+      <p class="text-center" style="max-width: 700px; margin: 0 auto 40px; color: #555;">
+        Serving customers across 50+ countries with export-ready formulations and technical support.
+      </p>
+
+      <div class="regions-grid">
+        <div class="region-item">
+          <i class="fas fa-map-marker-alt"></i>
+          <h4>India</h4>
+        </div>
+        <div class="region-item">
+          <i class="fas fa-globe-asia"></i>
+          <h4>Asia-Pacific</h4>
+        </div>
+        <div class="region-item">
+          <i class="fas fa-landmark"></i>
+          <h4>Russia</h4>
+        </div>
+        <div class="region-item">
+          <i class="fas fa-mosque"></i>
+          <h4>Middle East</h4>
+        </div>
+        <div class="region-item">
+          <i class="fas fa-monument"></i>
+          <h4>Africa</h4>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>Chemizol Additives Pvt. Ltd.</h3>
+          <p>Delivering innovative, sustainable, and high-performance lubricant solutions that empower partners and OEMs worldwide.</p>
+          <div class="social-icons" style="display: flex; gap: 15px; margin-top: 20px;">
+            <a href="#" style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: #333; color: #fff; border-radius: 50%; text-decoration: none;"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="industries.html">Industries</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Products</h3>
+          <ul>
+            <li>Engine Oil Additives</li>
+            <li>ATF & Gear Additives</li>
+            <li>Base Stocks</li>
+            <li>Viscosity Improvers</li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Contact</h3>
+          <ul>
+            <li><i class="fas fa-map-marker-alt"></i> Bangalore, India</li>
+            <li><i class="fas fa-phone"></i> +91 98666 89645</li>
+            <li><i class="fas fa-envelope"></i> info@chemizol.com</li>
+            <li><i class="fas fa-globe"></i> www.chemizol.com</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Chemizol Additives Pvt. Ltd. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    hamburger.addEventListener('click', () => navLinks.classList.toggle('active'));
+  </script>
+
+</body>
+</html>
