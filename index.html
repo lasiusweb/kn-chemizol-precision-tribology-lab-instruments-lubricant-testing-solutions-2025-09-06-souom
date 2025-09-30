@@ -1,277 +1,255 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enhanced Landing Page</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>KN Chemizol — Premium Chemical Solutions</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Poppins', sans-serif; color: #333; line-height: 1.6; background: #fff; }
+    h1, h2, h3, h4, h5 { font-family: 'Montserrat', sans-serif; font-weight: 700; }
+    .container { width: 90%; max-width: 1200px; margin: 0 auto; padding: 0 15px; }
+    .btn {
+      display: inline-block;
+      padding: 12px 30px;
+      background: #006400;
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    .btn:hover { background: #004d00; transform: translateY(-2px); }
+    section { padding: 80px 0; }
+    .text-center { text-align: center; }
+
+    header {
+      background: #fff;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+    }
+    .logo {
+      font-size: 24px;
+      font-weight: 800;
+      color: #006400;
+      text-decoration: none;
+    }
+    .logo span { color: #333; }
+    .nav-links {
+      display: flex;
+      list-style: none;
+    }
+    .nav-links li { margin-left: 30px; }
+    .nav-links a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    .nav-links a:hover { color: #006400; }
+    .hamburger { display: none; cursor: pointer; font-size: 24px; }
+
+    .hero {
+      background: linear-gradient(rgba(0, 100, 0, 0.8), rgba(0, 100, 0, 0.9)), url('https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      color: white;
+      text-align: center;
+    }
+    .hero-content { max-width: 800px; margin: 0 auto; padding-top: 60px; }
+    .hero h1 { font-size: 3.5rem; margin-bottom: 20px; line-height: 1.2; }
+    .hero p { font-size: 1.2rem; margin-bottom: 30px; }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-top: 50px;
+    }
+    .feature-card {
+      text-align: center;
+      padding: 30px;
+      background: #f9f9f9;
+      border-radius: 8px;
+      transition: transform 0.3s;
+    }
+    .feature-card:hover { transform: translateY(-5px); }
+    .feature-card i { font-size: 2.5rem; color: #006400; margin-bottom: 15px; }
+
+    footer {
+      background: #222;
+      color: #fff;
+      padding: 60px 0 20px;
+    }
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-bottom: 40px;
+    }
+    .footer-column h3 { font-size: 1.3rem; margin-bottom: 20px; color: #00c853; }
+    .footer-column ul { list-style: none; }
+    .footer-column ul li { margin-bottom: 10px; }
+    .footer-column ul li a { color: #ccc; text-decoration: none; transition: color 0.3s; }
+    .footer-column ul li a:hover { color: #fff; }
+    .footer-bottom { text-align: center; padding-top: 20px; border-top: 1px solid #444; color: #aaa; font-size: 0.9rem; }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 80px);
+        background: #fff;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 40px;
+        transition: 0.3s;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+      }
+      .nav-links.active { left: 0; }
+      .nav-links li { margin: 15px 0; }
+      .hamburger { display: block; }
+      .hero h1 { font-size: 2.5rem; }
+    }
+  </style>
 </head>
 <body>
-    <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KN Chemizol - Precision Tribology Lab Instruments</title>
-    <meta name="description" content="Leading provider of precision tribology lab instruments and lubricant testing solutions">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-</head>
-<body class="font-['Inter'] antialiased bg-white text-gray-900">
-    <header class="fixed w-full bg-white/95 backdrop-blur-sm shadow-sm z-50">
-        <nav class="container mx-auto px-6 py-4">
-            <div class="flex items-center justify-between">
-                <a href="https://lasiusweb.github.io/kn-chemizol-precision-tribology-lab-instruments-lubricant-testing-solutions-2025-09-06-souom" class="text-xl font-bold hover:text-blue-600 transition-colors duration-300">KN Chemizol</a>
-                <div class="hidden md:flex space-x-8">
-                    <a href="#features" class="text-gray-600 hover:text-blue-600 transition-colors duration-300">Features</a>
-                    <a href="#benefits" class="text-gray-600 hover:text-blue-600 transition-colors duration-300">Benefits</a>
-                    <a href="#testimonials" class="text-gray-600 hover:text-blue-600 transition-colors duration-300">Testimonials</a>
-                    <a href="#about" class="text-gray-600 hover:text-blue-600 transition-colors duration-300">About</a>
-                    <a href="#faq" class="text-gray-600 hover:text-blue-600 transition-colors duration-300">FAQ</a>
-                    <a href="#contact" class="text-gray-600 hover:text-blue-600 transition-colors duration-300">Contact</a>
-                </div>
-                <button class="mobile-menu-button md:hidden" aria-label="Toggle mobile menu">
-                    <i class="fas fa-bars text-2xl"></i>
-                </button>
-            </div>
-            <div class="mobile-menu hidden md:hidden mt-4 bg-white rounded-lg shadow-lg absolute left-0 right-0 p-4">
-                <a href="#features" class="block py-2 px-4 hover:bg-gray-100 rounded transition-colors duration-300">Features</a>
-                <a href="#benefits" class="block py-2 px-4 hover:bg-gray-100 rounded transition-colors duration-300">Benefits</a>
-                <a href="#testimonials" class="block py-2 px-4 hover:bg-gray-100 rounded transition-colors duration-300">Testimonials</a>
-                <a href="#about" class="block py-2 px-4 hover:bg-gray-100 rounded transition-colors duration-300">About</a>
-                <a href="#faq" class="block py-2 px-4 hover:bg-gray-100 rounded transition-colors duration-300">FAQ</a>
-                <a href="#contact" class="block py-2 px-4 hover:bg-gray-100 rounded transition-colors duration-300">Contact</a>
-            </div>
-        </nav>
-    </header>
 
-    <main>
-        <section class="pt-32 pb-24 bg-gradient-to-b from-gray-50 to-white">
-            <div class="container mx-auto px-6">
-                <div class="max-w-4xl mx-auto text-center">
-                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight mb-8">
-                        Transform Your Lubricant Testing with Industry-Leading Precision
-                    </h1>
-                    <p class="text-xl md:text-2xl text-gray-600 mb-12">
-                        Experience unmatched accuracy and efficiency with KN Chemizol's advanced tribology lab instruments
-                    </p>
-                    <a href="https://wa.link/lkqqud" class="inline-block bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl">
-                        Schedule a Demo
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <section id="features" class="py-24 bg-white">
-            <div class="container mx-auto px-6">
-                <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">Advanced Testing Capabilities</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-                    <div class="bg-gray-50 rounded-xl p-8 hover:shadow-xl transition-all duration-300 transform hover:scale-102 hover:bg-gray-100">
-                        <div class="text-blue-600 mb-4">
-                            <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
-                            </svg>
-                        </div>
-                        <h3 class="text-xl font-semibold mb-4">Precision Tribology Testing</h3>
-                        <p class="text-gray-600">Industry-leading accuracy with our state-of-the-art tribometers and wear testing equipment</p>
-                    </div>
-                    <div class="bg-gray-50 rounded-xl p-8 hover:shadow-xl transition-all duration-300 transform hover:scale-102 hover:bg-gray-100">
-                        <div class="text-blue-600 mb-4">
-                            <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
-                            </svg>
-                        </div>
-                        <h3 class="text-xl font-semibold mb-4">Advanced Analytics</h3>
-                        <p class="text-gray-600">Comprehensive data analysis and reporting with our cutting-edge software solutions</p>
-                    </div>
-                    <div class="bg-gray-50 rounded-xl p-8 hover:shadow-xl transition-all duration-300 transform hover:scale-102 hover:bg-gray-100">
-                        <div class="text-blue-600 mb-4">
-                            <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
-                            </svg>
-                        </div>
-                        <h3 class="text-xl font-semibold mb-4">Custom Testing Solutions</h3>
-                        <p class="text-gray-600">Tailored testing protocols designed to meet your specific research requirements</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="benefits" class="py-24 bg-gray-50">
-            <div class="container mx-auto px-6">
-                <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">Why Choose KN Chemizol</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-                    <div class="flex items-start space-x-4 hover:transform hover:scale-102 transition-all duration-300">
-                        <div class="flex-shrink-0 bg-blue-100 rounded-lg p-3">
-                            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-                            </svg>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-semibold mb-2">Accelerated R&D Process</h3>
-                            <p class="text-gray-600">Cut development time by up to 40% with our rapid testing and analysis capabilities</p>
-                        </div>
-                    </div>
-                    <div class="flex items-start space-x-4 hover:transform hover:scale-102 transition-all duration-300">
-                        <div class="flex-shrink-0 bg-blue-100 rounded-lg p-3">
-                            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                            </svg>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-semibold mb-2">Superior Accuracy</h3>
-                            <p class="text-gray-600">Industry-leading precision with ±0.1% measurement accuracy across all parameters</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="testimonials" class="py-24 bg-white">
-            <div class="container mx-auto px-6">
-                <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">What Our Clients Say</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div class="bg-gray-50 p-8 rounded-xl hover:shadow-lg transition-all duration-300">
-                        <div class="flex items-center mb-4">
-                            <div class="text-yellow-400">★★★★★</div>
-                        </div>
-                        <p class="text-gray-600 mb-4">"KN Chemizol's testing equipment has revolutionized our R&D process. We've reduced testing time by 35% while maintaining exceptional accuracy."</p>
-                        <p class="font-semibold">Dr. Sarah Chen</p>
-                        <p class="text-sm text-gray-500">Lead Researcher, Global Lubricants Corp</p>
-                    </div>
-                    <div class="bg-gray-50 p-8 rounded-xl hover:shadow-lg transition-all duration-300">
-                        <div class="flex items-center mb-4">
-                            <div class="text-yellow-400">★★★★★</div>
-                        </div>
-                        <p class="text-gray-600 mb-4">"The precision and reliability of their instruments are unmatched. Their support team's expertise has been invaluable to our research."</p>
-                        <p class="font-semibold">James Wilson</p>
-                        <p class="text-sm text-gray-500">Technical Director, Advanced Materials Inc</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="about" class="py-24 bg-gray-50">
-            <div class="container mx-auto px-6">
-                <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">About KN Chemizol</h2>
-                <div class="max-w-3xl mx-auto">
-                    <p class="text-gray-600 mb-8">Founded in 2010, KN Chemizol emerged from a vision to revolutionize tribology testing through innovation and precision. Our journey began with a team of experienced engineers and scientists who recognized the need for more accurate and efficient testing solutions in the lubricant industry.</p>
-                    <p class="text-gray-600">Today, we're driven by our mission to advance tribological research and development through cutting-edge technology and exceptional service. Our core values of innovation, precision, and customer success guide everything we do, from product development to customer support.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="faq" class="py-24 bg-white">
-            <div class="container mx-auto px-6">
-                <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">Frequently Asked Questions</h2>
-                <div class="max-w-3xl mx-auto space-y-6">
-                    <div class="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-all duration-300">
-                        <h3 class="text-xl font-semibold mb-3">What types of testing equipment do you offer?</h3>
-                        <p class="text-gray-600">We provide a comprehensive range of tribology testing instruments, including tribometers, viscometers, and wear testing equipment. Each device is calibrated to meet international standards and can be customized to your specific needs.</p>
-                    </div>
-                    <div class="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-all duration-300">
-                        <h3 class="text-xl font-semibold mb-3">How accurate are your testing instruments?</h3>
-                        <p class="text-gray-600">Our instruments deliver industry-leading accuracy with ±0.1% precision across all measurement parameters, backed by regular calibration and verification processes.</p>
-                    </div>
-                    <div class="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-all duration-300">
-                        <h3 class="text-xl font-semibold mb-3">Do you offer training and support?</h3>
-                        <p class="text-gray-600">Yes, we provide comprehensive training programs and 24/7 technical support to ensure you get the most out of your equipment.</p>
-                    </div>
-                    <div class="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-all duration-300">
-                        <h3 class="text-xl font-semibold mb-3">What is your warranty policy?</h3>
-                        <p class="text-gray-600">All our instruments come with a standard 2-year warranty, covering parts and labor, with options to extend coverage up to 5 years.</p>
-                    </div>
-                    <div class="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-all duration-300">
-                        <h3 class="text-xl font-semibold mb-3">Can you customize testing solutions?</h3>
-                        <p class="text-gray-600">Yes, we specialize in developing custom testing protocols and equipment modifications to meet specific research requirements and industry standards.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="py-24 bg-blue-600 text-white" style="background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80'); background-blend-mode: overlay;">
-            <div class="container mx-auto px-6 text-center">
-                <h2 class="text-3xl md:text-4xl font-bold mb-8">Ready to Transform Your Testing Process?</h2>
-                <p class="text-xl mb-12">Contact us today to discuss your testing needs and schedule a demonstration</p>
-                <div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-6">
-                    <a href="mailto:sudha@knchemizol.com" class="inline-block bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
-                        Email Us
-                    </a>
-                    <a href="https://wa.link/lkqqud" class="inline-block bg-green-500 text-white px-8 py-4 rounded-lg font-semibold hover:bg-green-600 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
-                        WhatsApp
-                    </a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="bg-gray-900 text-white py-16">
-        <div class="container mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
-                <div>
-                    <h3 class="text-xl font-bold mb-4">KN Chemizol</h3>
-                    <p class="text-gray-400">Precision Tribology Lab Instruments & Lubricant Testing Solutions</p>
-                </div>
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
-                    <ul class="space-y-2">
-                        <li><a href="#features" class="text-gray-400 hover:text-white transition-colors duration-300">Features</a></li>
-                        <li><a href="#benefits" class="text-gray-400 hover:text-white transition-colors duration-300">Benefits</a></li>
-                        <li><a href="#testimonials" class="text-gray-400 hover:text-white transition-colors duration-300">Testimonials</a></li>
-                        <li><a href="#faq" class="text-gray-400 hover:text-white transition-colors duration-300">FAQ</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">Legal</h4>
-                    <ul class="space-y-2">
-                        <li><a href="https://lasiusweb.github.io/kn-chemizol-precision-tribology-lab-instruments-lubricant-testing-solutions-2025-09-06-souom/privacy.html" class="text-gray-400 hover:text-white transition-colors duration-300">Privacy Policy</a></li>
-                        <li><a href="https://lasiusweb.github.io/kn-chemizol-precision-tribology-lab-instruments-lubricant-testing-solutions-2025-09-06-souom/terms.html" class="text-gray-400 hover:text-white transition-colors duration-300">Terms of Service</a></li>
-                        <li><a href="https://lasiusweb.github.io/kn-chemizol-precision-tribology-lab-instruments-lubricant-testing-solutions-2025-09-06-souom/blog.html" class="text-gray-400 hover:text-white transition-colors duration-300">Blog</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">Contact</h4>
-                    <ul class="space-y-2">
-                        <li><a href="mailto:sudha@knchemizol.com" class="text-gray-400 hover:text-white transition-colors duration-300">sudha@knchemizol.com</a></li>
-                        <li><a href="https://wa.link/lkqqud" class="text-gray-400 hover:text-white transition-colors duration-300">WhatsApp</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
-                <p>&copy; 2024 KN Chemizol. All rights reserved.</p>
-            </div>
+  <!-- HEADER -->
+  <header>
+    <div class="container">
+      <nav class="navbar">
+        <a href="index.html" class="logo">KN <span>Chemizol</span></a>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="industries.html">Industries</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger">
+          <i class="fas fa-bars"></i>
         </div>
-    </footer>
+      </nav>
+    </div>
+  </header>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const mobileMenuButton = document.querySelector('header nav .mobile-menu-button');
-            const mobileMenu = document.querySelector('header nav .mobile-menu');
-            
-            if (mobileMenuButton && mobileMenu) {
-                mobileMenuButton.addEventListener('click', () => {
-                    mobileMenu.classList.toggle('hidden');
-                    const icon = mobileMenuButton.querySelector('i');
-                    if (icon) {
-                        icon.classList.toggle('fa-bars');
-                        icon.classList.toggle('fa-times');
-                    }
-                });
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-content">
+      <h1>Delivering Excellence in Chemical Solutions</h1>
+      <p>Trusted manufacturer and global supplier of high-purity industrial, laboratory, and specialty chemicals. ISO-certified. Export-ready.</p>
+      <a href="contact.html" class="btn">Request a Quote</a>
+    </div>
+  </section>
 
-                const mobileMenuLinks = mobileMenu.querySelectorAll('a');
-                mobileMenuLinks.forEach(link => {
-                    link.addEventListener('click', () => {
-                        mobileMenu.classList.add('hidden');
-                        const icon = mobileMenuButton.querySelector('i');
-                        if (icon) {
-                            icon.classList.remove('fa-times');
-                            icon.classList.add('fa-bars');
-                        }
-                    });
-                });
-            }
-        });
-    </script>
-</body>
+  <!-- FEATURES -->
+  <section>
+    <div class="container">
+      <div class="text-center">
+        <h2 class="section-title">Why Choose KN Chemizol?</h2>
+      </div>
+      <div class="features">
+        <div class="feature-card">
+          <i class="fas fa-certificate"></i>
+          <h3>ISO Certified</h3>
+          <p>Quality management systems in place for consistent product excellence.</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-globe-americas"></i>
+          <h3>Global Export</h3>
+          <p>Serving clients in 30+ countries with reliable logistics and documentation.</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-flask"></i>
+          <h3>High Purity</h3>
+          <p>All products tested and certified for purity, stability, and performance.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>KN Chemizol</h3>
+          <p>Delivering high-purity chemical solutions with integrity, innovation, and global reach.</p>
+          <div class="social-icons" style="display: flex; gap: 15px; margin-top: 20px;">
+            <a href="#" style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: #333; color: #fff; border-radius: 50%; text-decoration: none;"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: #333; color: #fff; border-radius: 50%; text-decoration: none;"><i class="fab fa-facebook-f"></i></a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="industries.html">Industries</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Products</h3>
+          <ul>
+            <li><a href="products.html">Industrial Chemicals</a></li>
+            <li><a href="products.html">Laboratory Reagents</a></li>
+            <li><a href="products.html">Specialty Chemicals</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Contact</h3>
+          <ul>
+            <li><i class="fas fa-map-marker-alt"></i> Gujarat, India</li>
+            <li><i class="fas fa-phone"></i> +91 98765 43210</li>
+            <li><i class="fas fa-envelope"></i> info@knchemizol.com</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 KN Chemizol. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+
+    // Smooth scroll for same-page anchors (not needed for multi-page, but kept for consistency)
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          window.scrollTo({
+            top: target.offsetTop - 80,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  </script>
+
 </body>
 </html>
