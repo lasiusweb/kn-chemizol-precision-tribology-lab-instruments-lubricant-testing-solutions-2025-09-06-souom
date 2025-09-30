@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us — Chemizol Additives</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Poppins', sans-serif; color: #333; line-height: 1.6; background: #fff; }
+    h1, h2, h3, h4, h5 { font-family: 'Montserrat', sans-serif; font-weight: 700; }
+    .container { width: 90%; max-width: 1200px; margin: 0 auto; padding: 0 15px; }
+    .btn {
+      display: inline-block;
+      padding: 12px 30px;
+      background: #004d99;
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    .btn:hover { background: #003a75; transform: translateY(-2px); }
+    section { padding: 80px 0; }
+    .text-center { text-align: center; }
+
+    header {
+      background: #fff;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+    }
+    .logo {
+      font-size: 24px;
+      font-weight: 800;
+      color: #004d99;
+      text-decoration: none;
+    }
+    .nav-links {
+      display: flex;
+      list-style: none;
+    }
+    .nav-links li { margin-left: 30px; }
+    .nav-links a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    .nav-links a:hover { color: #004d99; }
+    .hamburger { display: none; cursor: pointer; font-size: 24px; }
+
+    .about-content {
+      display: flex;
+      align-items: center;
+      gap: 50px;
+      margin-top: 50px;
+    }
+    .about-text { flex: 1; }
+    .about-image { flex: 1; text-align: center; }
+    .about-image img {
+      max-width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .stats {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      margin: 60px 0;
+      text-align: center;
+    }
+    .stat-box {
+      padding: 20px;
+      min-width: 200px;
+    }
+    .stat-box .number {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: #004d99;
+    }
+
+    footer {
+      background: #222;
+      color: #fff;
+      padding: 60px 0 20px;
+    }
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-bottom: 40px;
+    }
+    .footer-column h3 { font-size: 1.3rem; margin-bottom: 20px; color: #4fc3f7; }
+    .footer-column ul { list-style: none; }
+    .footer-column ul li { margin-bottom: 10px; }
+    .footer-column ul li a { color: #ccc; text-decoration: none; transition: color 0.3s; }
+    .footer-column ul li a:hover { color: #fff; }
+    .footer-bottom { text-align: center; padding-top: 20px; border-top: 1px solid #444; color: #aaa; font-size: 0.9rem; }
+
+    @media (max-width: 992px) {
+      .about-content { flex-direction: column; }
+    }
+    @media (max-width: 768px) {
+      .nav-links {
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 80px);
+        background: #fff;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 40px;
+        transition: 0.3s;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+      }
+      .nav-links.active { left: 0; }
+      .nav-links li { margin: 15px 0; }
+      .hamburger { display: block; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container">
+      <nav class="navbar">
+        <a href="index.html" class="logo">Chemizol</a>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="industries.html">Industries</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger">
+          <i class="fas fa-bars"></i>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ABOUT SECTION -->
+  <section>
+    <div class="container">
+      <div class="text-center">
+        <h2 class="section-title">About Chemizol</h2>
+        <p style="max-width: 700px; margin: 0 auto 50px;">Innovating lubricant technology since the late 1980s with global standards and Indian agility.</p>
+      </div>
+
+      <div class="about-content">
+        <div class="about-text">
+          <h3>Who We Are</h3>
+          <p>Chemizol Additives Pvt. Ltd. is a leading Indian manufacturer of lubricant additives, base stocks, and specialty formulations. Headquartered in Bangalore, Karnataka, we serve both domestic and international markets with a strong focus on technical excellence, innovation, and cost efficiency.</p>
+          <p>Our Global Technology Centre in Bidadi Industrial Area is equipped with state-of-the-art R&D and testing infrastructure, enabling us to develop high-performance, sustainable solutions tailored to customer needs.</p>
+          <p>We partner with OEMs, lubricant blenders, and distributors across India, Asia-Pacific, Russia, the Middle East, and Africa — offering both additive components and ready-to-market private-label formulations.</p>
+          <a href="contact.html" class="btn" style="margin-top: 20px;">Contact Our Team</a>
+        </div>
+        <div class="about-image">
+          <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Chemizol Facility">
+        </div>
+      </div>
+
+      <div class="stats">
+        <div class="stat-box">
+          <div class="number">1980s</div>
+          <div>Established</div>
+        </div>
+        <div class="stat-box">
+          <div class="number">50+</div>
+          <div>Countries Served</div>
+        </div>
+        <div class="stat-box">
+          <div class="number">API / JASO</div>
+          <div>Compliant</div>
+        </div>
+        <div class="stat-box">
+          <div class="number">End-to-End</div>
+          <div>Capability</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>Chemizol Additives Pvt. Ltd.</h3>
+          <p>Delivering innovative, sustainable, and high-performance lubricant solutions that empower partners and OEMs worldwide.</p>
+          <div class="social-icons" style="display: flex; gap: 15px; margin-top: 20px;">
+            <a href="#" style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: #333; color: #fff; border-radius: 50%; text-decoration: none;"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="industries.html">Industries</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Products</h3>
+          <ul>
+            <li><a href="products.html">Engine Oil Additives</a></li>
+            <li><a href="products.html">ATF & Gear Additives</a></li>
+            <li><a href="products.html">Base Stocks</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Contact</h3>
+          <ul>
+            <li><i class="fas fa-map-marker-alt"></i> Bangalore, India</li>
+            <li><i class="fas fa-phone"></i> +91 98666 89645</li>
+            <li><i class="fas fa-envelope"></i> info@chemizol.com</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Chemizol Additives Pvt. Ltd. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    hamburger.addEventListener('click', () => navLinks.classList.toggle('active'));
+  </script>
+
+</body>
+</html>
