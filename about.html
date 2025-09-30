@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Chemizol Additives Pvt. Ltd. – Leading Indian manufacturer of lubricant additives, base stocks, and specialty formulations since the 1980s.">
   <title>About Us — Chemizol Additives</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
@@ -59,35 +60,88 @@
     .nav-links a:hover { color: #004d99; }
     .hamburger { display: none; cursor: pointer; font-size: 24px; }
 
+    .section-title {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      position: relative;
+      padding-bottom: 15px;
+      text-align: center;
+    }
+    .section-title:after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 0;
+      width: 70px;
+      height: 4px;
+      background: #004d99;
+    }
+
+    .about-intro {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 50px;
+      font-size: 1.1rem;
+      color: #555;
+    }
+
     .about-content {
       display: flex;
       align-items: center;
       gap: 50px;
-      margin-top: 50px;
+      margin-top: 40px;
     }
     .about-text { flex: 1; }
-    .about-image { flex: 1; text-align: center; }
-    .about-image img {
-      max-width: 100%;
-      border-radius: 8px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    .about-text p { margin-bottom: 18px; line-height: 1.7; }
+    .about-image {
+      flex: 1;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+      height: 400px;
+      background: url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80') center/cover;
     }
 
-    .stats {
-      display: flex;
-      justify-content: space-around;
-      flex-wrap: wrap;
-      margin: 60px 0;
-      text-align: center;
+    .vision-box {
+      background: #f0f7ff;
+      border-left: 4px solid #004d99;
+      padding: 25px;
+      margin: 40px 0;
+      border-radius: 0 8px 8px 0;
     }
-    .stat-box {
-      padding: 20px;
-      min-width: 200px;
-    }
-    .stat-box .number {
-      font-size: 2.5rem;
-      font-weight: 800;
+    .vision-box h3 {
       color: #004d99;
+      margin-bottom: 12px;
+    }
+
+    .strengths-grid,
+    .rd-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      margin-top: 40px;
+    }
+    .card {
+      background: #f9fbfd;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      transition: all 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 16px rgba(0,77,153,0.1);
+    }
+    .card h4 {
+      color: #004d99;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+    }
+    .card h4 i {
+      margin-right: 12px;
+      font-size: 1.4rem;
     }
 
     footer {
@@ -110,6 +164,7 @@
 
     @media (max-width: 992px) {
       .about-content { flex-direction: column; }
+      .about-image { height: 300px; width: 100%; }
     }
     @media (max-width: 768px) {
       .nav-links {
@@ -128,6 +183,7 @@
       .nav-links.active { left: 0; }
       .nav-links li { margin: 15px 0; }
       .hamburger { display: block; }
+      .section-title { font-size: 2rem; }
     }
   </style>
 </head>
@@ -155,41 +211,99 @@
   <!-- ABOUT SECTION -->
   <section>
     <div class="container">
-      <div class="text-center">
-        <h2 class="section-title">About Chemizol</h2>
-        <p style="max-width: 700px; margin: 0 auto 50px;">Innovating lubricant technology since the late 1980s with global standards and Indian agility.</p>
-      </div>
+      <h2 class="section-title">About Chemizol</h2>
+      <p class="about-intro">
+        A leading Indian manufacturer of lubricant additives, base stocks, and specialty formulations — combining technical excellence, innovation, and cost efficiency since the late 1980s.
+      </p>
 
       <div class="about-content">
         <div class="about-text">
-          <h3>Who We Are</h3>
-          <p>Chemizol Additives Pvt. Ltd. is a leading Indian manufacturer of lubricant additives, base stocks, and specialty formulations. Headquartered in Bangalore, Karnataka, we serve both domestic and international markets with a strong focus on technical excellence, innovation, and cost efficiency.</p>
-          <p>Our Global Technology Centre in Bidadi Industrial Area is equipped with state-of-the-art R&D and testing infrastructure, enabling us to develop high-performance, sustainable solutions tailored to customer needs.</p>
-          <p>We partner with OEMs, lubricant blenders, and distributors across India, Asia-Pacific, Russia, the Middle East, and Africa — offering both additive components and ready-to-market private-label formulations.</p>
-          <a href="contact.html" class="btn" style="margin-top: 20px;">Contact Our Team</a>
+          <p>Chemizol Additives Pvt. Ltd. was established in the late 1980s with a vision to bring world-class lubricant technology to Indian and global markets. Headquartered in Bangalore, Karnataka, we serve customers across India, Asia-Pacific, Russia, the Middle East, and Africa.</p>
+          <p>Our <strong>Global Technology Centre</strong> in Bidadi Industrial Area is equipped with state-of-the-art R&D and testing infrastructure, enabling us to develop high-performance, sustainable solutions tailored to customer needs.</p>
+          <p>We partner with OEMs, lubricant blenders, and distributors — offering both additive components and ready-to-market private-label formulations with full technical support.</p>
+
+          <div class="vision-box">
+            <h3>Our Vision</h3>
+            <p>“To be a globally recognized Indian additive company, delivering innovative, sustainable, and high-performance solutions that empower partners and OEMs worldwide.”</p>
+          </div>
+
+          <a href="contact.html" class="btn">Partner With Us</a>
         </div>
-        <div class="about-image">
-          <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Chemizol Facility">
+        <div class="about-image"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CORE STRENGTHS -->
+  <section style="background: #f8f9fa;">
+    <div class="container">
+      <h2 class="section-title">Core Strengths</h2>
+      <div class="strengths-grid">
+        <div class="card">
+          <h4><i class="fas fa-industry"></i> End-to-End Capability</h4>
+          <p>Additive manufacturing, custom formulation, and private-label solutions under one roof.</p>
+        </div>
+        <div class="card">
+          <h4><i class="fas fa-bolt"></i> Agile & Cost-Competitive</h4>
+          <p>More responsive and economical than multinational competitors, without compromising quality.</p>
+        </div>
+        <div class="card">
+          <h4><i class="fas fa-microscope"></i> Technical Support</h4>
+          <p>Full laboratory services for formulation, performance validation, and troubleshooting.</p>
+        </div>
+        <div class="card">
+          <h4><i class="fas fa-certificate"></i> Global Standards</h4>
+          <p>Strict adherence to API, JASO, ISO, and international safety protocols.</p>
         </div>
       </div>
+    </div>
+  </section>
 
-      <div class="stats">
-        <div class="stat-box">
-          <div class="number">1980s</div>
-          <div>Established</div>
+  <!-- R&D INFRASTRUCTURE -->
+  <section>
+    <div class="container">
+      <h2 class="section-title">R&D & Testing Infrastructure</h2>
+      <p class="text-center" style="max-width: 750px; margin: 0 auto 40px; color: #555;">
+        Advanced facilities to drive innovation and ensure product reliability.
+      </p>
+      <div class="rd-grid">
+        <div class="card">
+          <h4><i class="fas fa-car"></i> Tribology & Engine Test Beds</h4>
+          <p>Simulate real-world lubrication and engine performance under controlled conditions.</p>
         </div>
-        <div class="stat-box">
-          <div class="number">50+</div>
-          <div>Countries Served</div>
+        <div class="card">
+          <h4><i class="fas fa-flask"></i> Analytical Labs</h4>
+          <p>Equipped with GC, FTIR, ICP, HPLC, and viscometry for precise chemical analysis.</p>
         </div>
-        <div class="stat-box">
-          <div class="number">API / JASO</div>
-          <div>Compliant</div>
+        <div class="card">
+          <h4><i class="fas fa-leaf"></i> EV & Eco R&D</h4>
+          <p>Developing e-axle fluids, thermal management fluids, and bio-based additives.</p>
         </div>
-        <div class="stat-box">
-          <div class="number">End-to-End</div>
-          <div>Capability</div>
+        <div class="card">
+          <h4><i class="fas fa-fire"></i> Hot Oven Lab</h4>
+          <p>High-temperature stability testing of lubricants and additive packages.</p>
         </div>
+        <div class="card">
+          <h4><i class="fas fa-cogs"></i> Pilot Plants</h4>
+          <p>Small-scale blending and rapid customization for customer trials.</p>
+        </div>
+        <div class="card">
+          <h4><i class="fas fa-shield-alt"></i> Safety Compliance</h4>
+          <p>Strict adherence to international laboratory and chemical handling safety standards.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STRATEGIC DIRECTION -->
+  <section style="background: #f0f7ff; text-align: center; padding: 70px 0;">
+    <div class="container">
+      <h2 class="section-title">Strategic Direction (2025–2030)</h2>
+      <div style="max-width: 800px; margin: 0 auto; font-size: 1.1rem; color: #333;">
+        <p>• Expansion into sustainable, ashless, and bio-based additive technologies</p>
+        <p>• Development of EV-specific products (e-axle fluids, thermal management fluids)</p>
+        <p>• Strengthening export presence in emerging markets</p>
+        <p>• Increased investment in R&D, certifications, and global alliances</p>
       </div>
     </div>
   </section>
@@ -218,9 +332,10 @@
         <div class="footer-column">
           <h3>Products</h3>
           <ul>
-            <li><a href="products.html">Engine Oil Additives</a></li>
-            <li><a href="products.html">ATF & Gear Additives</a></li>
-            <li><a href="products.html">Base Stocks</a></li>
+            <li>Engine Oil Additives</li>
+            <li>ATF & Gear Additives</li>
+            <li>Base Stocks</li>
+            <li>Viscosity Improvers</li>
           </ul>
         </div>
         <div class="footer-column">
@@ -229,6 +344,7 @@
             <li><i class="fas fa-map-marker-alt"></i> Bangalore, India</li>
             <li><i class="fas fa-phone"></i> +91 98666 89645</li>
             <li><i class="fas fa-envelope"></i> info@chemizol.com</li>
+            <li><i class="fas fa-globe"></i> www.chemizol.com</li>
           </ul>
         </div>
       </div>
