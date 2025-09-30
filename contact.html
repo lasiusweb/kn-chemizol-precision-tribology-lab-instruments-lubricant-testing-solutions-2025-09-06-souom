@@ -1,6 +1,331 @@
-<!-- Header/Footer same -->
-<!-- Contact info from PDF: -->
-<p><i class="fas fa-map-marker-alt"></i> <strong>Corporate Office:</strong> #3, 17th Cross, 1st Floor, K.R. Road Industrial Layout, Banashankari 2nd Stage, Bangalore – 560070, India.</p>
-<p><i class="fas fa-phone"></i> <strong>Phone:</strong> +91 98666 89645</p>
-<p><i class="fas fa-envelope"></i> <strong>Email:</strong> info@chemizol.com</p>
-<p><i class="fas fa-globe"></i> <strong>Website:</strong> www.chemizol.com</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Contact Chemizol Additives Pvt. Ltd. — leading Indian manufacturer of lubricant additives, base stocks, and specialty formulations for global markets.">
+  <title>Contact Us — Chemizol Additives</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Poppins', sans-serif; color: #333; line-height: 1.6; background: #fff; }
+    h1, h2, h3, h4, h5 { font-family: 'Montserrat', sans-serif; font-weight: 700; }
+    .container { width: 90%; max-width: 1200px; margin: 0 auto; padding: 0 15px; }
+    .btn {
+      display: inline-block;
+      padding: 12px 30px;
+      background: #004d99;
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    .btn:hover { background: #003a75; transform: translateY(-2px); }
+    section { padding: 80px 0; }
+    .text-center { text-align: center; }
+
+    header {
+      background: #fff;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+    }
+    .logo {
+      font-size: 24px;
+      font-weight: 800;
+      color: #004d99;
+      text-decoration: none;
+    }
+    .nav-links {
+      display: flex;
+      list-style: none;
+    }
+    .nav-links li { margin-left: 30px; }
+    .nav-links a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    .nav-links a:hover { color: #004d99; }
+    .hamburger { display: none; cursor: pointer; font-size: 24px; }
+
+    .section-title {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      position: relative;
+      padding-bottom: 15px;
+      text-align: center;
+    }
+    .section-title:after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 0;
+      width: 70px;
+      height: 4px;
+      background: #004d99;
+    }
+
+    .contact-intro {
+      text-align: center;
+      max-width: 750px;
+      margin: 0 auto 50px;
+      color: #555;
+      font-size: 1.1rem;
+    }
+
+    .contact-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+    }
+
+    .contact-info h3 {
+      font-size: 1.8rem;
+      margin-bottom: 25px;
+      color: #004d99;
+    }
+    .contact-info p {
+      margin-bottom: 18px;
+      display: flex;
+      align-items: flex-start;
+      font-size: 1.05rem;
+    }
+    .contact-info i {
+      min-width: 24px;
+      color: #004d99;
+      margin-right: 12px;
+      margin-top: 4px;
+    }
+    .contact-info strong {
+      color: #004d99;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 14px;
+      margin-bottom: 20px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 1rem;
+      transition: border 0.3s;
+    }
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      outline: none;
+      border-color: #004d99;
+    }
+    .contact-form textarea {
+      height: 180px;
+      resize: vertical;
+    }
+    .contact-form .btn {
+      width: 100%;
+      padding: 15px;
+      font-size: 1.1rem;
+    }
+
+    .map-placeholder {
+      background: #f5f9ff;
+      border-radius: 10px;
+      padding: 30px;
+      text-align: center;
+      margin-top: 30px;
+      border: 1px dashed #aad5ff;
+    }
+    .map-placeholder i {
+      font-size: 3rem;
+      color: #004d99;
+      margin-bottom: 15px;
+    }
+
+    footer {
+      background: #222;
+      color: #fff;
+      padding: 60px 0 20px;
+    }
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-bottom: 40px;
+    }
+    .footer-column h3 { font-size: 1.3rem; margin-bottom: 20px; color: #4fc3f7; }
+    .footer-column ul { list-style: none; }
+    .footer-column ul li { margin-bottom: 10px; }
+    .footer-column ul li a { color: #ccc; text-decoration: none; transition: color 0.3s; }
+    .footer-column ul li a:hover { color: #fff; }
+    .footer-bottom { text-align: center; padding-top: 20px; border-top: 1px solid #444; color: #aaa; font-size: 0.9rem; }
+
+    @media (max-width: 992px) {
+      .contact-container {
+        grid-template-columns: 1fr;
+      }
+    }
+    @media (max-width: 768px) {
+      .nav-links {
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 80px);
+        background: #fff;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 40px;
+        transition: 0.3s;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+      }
+      .nav-links.active { left: 0; }
+      .nav-links li { margin: 15px 0; }
+      .hamburger { display: block; }
+      .section-title { font-size: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container">
+      <nav class="navbar">
+        <a href="index.html" class="logo">Chemizol</a>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="industries.html">Industries</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger">
+          <i class="fas fa-bars"></i>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- CONTACT SECTION -->
+  <section>
+    <div class="container">
+      <h2 class="section-title">Contact Us</h2>
+      <p class="contact-intro">
+        Reach out to our team for technical inquiries, product samples, partnership opportunities, or export support. We serve OEMs, lubricant blenders, and distributors worldwide.
+      </p>
+
+      <div class="contact-container">
+        <div class="contact-info">
+          <h3>Corporate Office</h3>
+          <p>
+            <i class="fas fa-map-marker-alt"></i>
+            <strong>Address:</strong> #3, 17th Cross, 1st Floor, K.R. Road Industrial Layout, Banashankari 2nd Stage, Bangalore – 560070, India.
+          </p>
+          <p>
+            <i class="fas fa-phone"></i>
+            <strong>Phone:</strong> +91 98666 89645
+          </p>
+          <p>
+            <i class="fas fa-envelope"></i>
+            <strong>Email:</strong> info@chemizol.com
+          </p>
+          <p>
+            <i class="fas fa-globe"></i>
+            <strong>Website:</strong> www.chemizol.com
+          </p>
+
+          <div class="map-placeholder">
+            <i class="fas fa-map-marked-alt"></i>
+            <h4>Global Technology Centre</h4>
+            <p>Bidadi Industrial Area, Karnataka, India</p>
+            <p style="font-size: 0.95rem; margin-top: 10px; color: #666;">
+              (Advanced R&D, testing labs, and pilot plants)
+            </p>
+          </div>
+        </div>
+
+        <div class="contact-form">
+          <!-- Netlify-compatible form -->
+          <form name="contact" method="POST" data-netlify="true">
+            <input type="hidden" name="form-name" value="contact" />
+            <input type="text" name="name" placeholder="Your Full Name" required>
+            <input type="email" name="email" placeholder="Your Business Email" required>
+            <input type="text" name="company" placeholder="Company Name" required>
+            <textarea name="message" placeholder="Tell us about your requirements (e.g., product interest, region, volume)" required></textarea>
+            <button type="submit" class="btn">Send Inquiry</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>Chemizol Additives Pvt. Ltd.</h3>
+          <p>Delivering innovative, sustainable, and high-performance lubricant solutions that empower partners and OEMs worldwide.</p>
+          <div class="social-icons" style="display: flex; gap: 15px; margin-top: 20px;">
+            <a href="#" style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: #333; color: #fff; border-radius: 50%; text-decoration: none;"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="industries.html">Industries</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Products</h3>
+          <ul>
+            <li>Engine Oil Additives</li>
+            <li>ATF & Gear Additives</li>
+            <li>Base Stocks</li>
+            <li>Viscosity Improvers</li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Markets</h3>
+          <ul>
+            <li>India</li>
+            <li>Asia-Pacific</li>
+            <li>Russia</li>
+            <li>Middle East</li>
+            <li>Africa</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Chemizol Additives Pvt. Ltd. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    hamburger.addEventListener('click', () => navLinks.classList.toggle('active'));
+  </script>
+
+</body>
+</html>
